@@ -1,12 +1,16 @@
 # ETA-TOUCHDRV
 
+**NOTE:** Following git and gbp commands are not fully tested yet.
+
 ## Introduction
-eta-touchdrv project provides kernel modes and their corresponding daemons for
+
+eta-touchdrv project provides kernel modules and their corresponding daemons for
 non-hid 2-camera and 4-camera touchscreen sensors of Fatih Interactive White
 Boards. Kernel modules are open-source, but source code of server daemons are
 unavailable. They are provided by Vestel.
 
 ## Maintenance
+
 Create topic branches (i.e. topic/bugfix, topic/new-feature) off the master.
 
 ```bash
@@ -42,7 +46,8 @@ git pull
 # Hack master
 git commit -am "Add new hacks"
 git log master --pretty --numstat --summary --no-merges | git2cl > ChangeLog
-git commit --amend
+git add ChangeLog
+git commit -m "Update ChangeLog"
 git checkout -b debian/experimental debian/sid
 # edit debian/gbp.conf for experimental builds
 # debian-branch = debian/experimental
