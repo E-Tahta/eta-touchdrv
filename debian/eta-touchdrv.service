@@ -1,0 +1,10 @@
+[Unit]
+Description=Non-HID touchscreen servers
+
+[Service]
+ExecStart=/usr/bin/touchdrv_install
+Restart=always
+RestartSec=4s
+
+[Install]
+WantedBy=multi-user.target
