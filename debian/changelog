@@ -1,3 +1,9 @@
+eta-touchdrv (0.1.1-2) unstable; urgency=medium
+
+  * [a93ceda] Change debian tagging scheme for GitLab errors
+
+ -- Gökhan Karabulut <gokhan.karabulut@tubitak.gov.tr>  Mon, 14 Dec 2015 21:10:38 +0200
+
 eta-touchdrv (0.1.1-1) unstable; urgency=medium
 
   * Upstream solves ohci-hcd problems of AMD IWBs.
