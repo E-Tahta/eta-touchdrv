@@ -1,12 +1,16 @@
 # ETA-TOUCHDRV
 
+**NOTE:** Following git and gbp commands are not fully tested yet.
+
 ## Introduction
-eta-touchdrv project provides kernel modes and their corresponding daemons for
+
+eta-touchdrv project provides kernel modules and their corresponding daemons for
 non-hid 2-camera and 4-camera touchscreen sensors of Fatih Interactive White
 Boards. Kernel modules are open-source, but source code of server daemons are
 unavailable. They are provided by Vestel.
 
 ## Maintenance
+
 Create topic branches (i.e. topic/bugfix, topic/new-feature) off the master.
 
 ```bash
@@ -21,6 +25,11 @@ all the tests.
 git checkout master
 git pull
 git checkout topic/bugfix
+# Hack hack hack
+git commit -am "New changes"
+git log master --pretty --numstat --summary --no-merges | git2cl > ChangeLog
+git add ChangeLog
+git commit -m "Update ChangeLog"
 git rebase master
 git checkout master
 git merge topic/bugfix --no-ff
@@ -39,10 +48,6 @@ Here is how you could get a snotshot build.
 ```bash
 git checkout master
 git pull
-# Hack master
-git commit -am "Add new hacks"
-git log master --pretty --numstat --summary --no-merges | git2cl > ChangeLog
-git commit --amend
 git checkout -b debian/experimental debian/sid
 # edit debian/gbp.conf for experimental builds
 # debian-branch = debian/experimental
@@ -63,7 +68,6 @@ git merge master
 # You might want to hack some debian/* files.
 # In case you had some changes
 git commit -am "Add new changes to debian/*"
-
 gbp dch --release --auto debian/
 git commit -am "New release vx.y.z"
 gbp buildpackage -uc -us --git-tag
