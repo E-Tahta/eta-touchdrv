@@ -72,8 +72,15 @@ git merge master
 # You might want to hack some debian/* files.
 # In case you had some changes
 git commit -am "Add new changes to debian/*"
+# Edit debian/changelog
 gbp dch --release --auto debian/
-git commit -am "New release vx.y.z"
+# If you didn't make any changes in debian/
+# (New upstream version changes only)
+# skip debian/ and run the following instead
+gbp dch --release --auto
+# After editing debian/changelog, commit it
+git commit -am "New release x.y.z-d"
+# Build and tag on successful build
 gbp buildpackage -uc -us --git-tag
 ```
 
