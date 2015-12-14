@@ -18,19 +18,23 @@ git checkout -b topic/bugfix master
 # hack hack hack to fix the bug
 ```
 
-Impelement the feature or fix the bug and merge it back to master if it passes
+Implement the feature or fix the bug and merge it back to master if it passes
 all the tests.
 
 ```bash
+# Add and commit new changes
+git commit -am "New changes"
+# In case remote master changed
 git checkout master
 git pull
+# Rebase topic branch
 git checkout topic/bugfix
-# Hack hack hack
-git commit -am "New changes"
+git rebase master
+# Update ChangeLog
 git log master --pretty --numstat --summary --no-merges | git2cl > ChangeLog
 git add ChangeLog
 git commit -m "Update ChangeLog"
-git rebase master
+# Merge topic branch
 git checkout master
 git merge topic/bugfix --no-ff
 ```
@@ -38,10 +42,10 @@ git merge topic/bugfix --no-ff
 ## Packaging
 
 For debian packaging we have debian/sid branch in our repo. You can also create
-your packaging branches like debian/experimental. Create ChangeLog for master
-and tag it with the pattern `vx.y.z` and merge the tag into debian/sid
-branch. Edit debian/changelog and build debian package. Before a release package
-you might want to build several experimental snatshot packages.
+your packaging branches like debian/experimental. For a release build, tag the
+head of master branch with the pattern `vx.y.z` and merge the tag into
+debian/sid branch. Edit debian/changelog and build debian package. Before a
+release package you might want to build several experimental snatshot packages.
 
 Here is how you could get a snotshot build.
 
