@@ -84,4 +84,4 @@ git commit -am "New release x.y.z-d"
 gbp buildpackage -uc -us --git-tag
 ```
 
-This will be automatically tagged with debian/sid/x.y.z-d
+This will be automatically tagged with debian-sid/x.y.z-d
