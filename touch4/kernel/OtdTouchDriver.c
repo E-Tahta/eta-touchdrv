@@ -283,7 +283,7 @@ static int otd_release(struct inode * inode, struct file * filp)
 	return 0;
 }
 
-static int otd_read(struct file * filp, char * buffer, size_t count, loff_t * ppos)
+static ssize_t otd_read(struct file * filp, char * buffer, size_t count, loff_t * ppos)
 {
 	int retval = -1;
 	int bytes_read;
@@ -357,7 +357,7 @@ static int otd_read(struct file * filp, char * buffer, size_t count, loff_t * pp
 	return retval;
 }
 
-static int otd_write(struct file * filp, const char * user_buffer, size_t count, loff_t * ppos)
+static ssize_t otd_write(struct file * filp, const char * user_buffer, size_t count, loff_t * ppos)
 {
 	int i = 0;
 	int ret = -1;
