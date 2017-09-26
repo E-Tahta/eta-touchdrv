@@ -1,7 +1,7 @@
 Source: eta-touchdrv
 Section: kernel
 Priority: optional
-Maintainer: Gökhan Karabulut <gokhan.karabulut@tubitak.gov.tr>
+Maintainer: Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>
 Build-Depends: debhelper (>= 9), dkms (>= 1.95), dh-systemd (>= 1.5)
 Standards-Version: 3.9.6
 Homepage: https://git.pardus.org.tr
