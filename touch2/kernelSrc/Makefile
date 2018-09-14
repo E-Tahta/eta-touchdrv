@@ -13,7 +13,9 @@ C_FLAGS = -Wall -O -pipe $(INCLUDE)
 ifneq ($(KERNELRELEASE),)
 obj-m := $(MODULE).o
 else
-KDIR := /lib/modules/$(shell uname -r)/build
+KVER ?= $(shell uname -r)
+KDIR ?= /lib/modules/$(KVER)/build
+
 PWD := $(shell pwd)
 
 all:
