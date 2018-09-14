@@ -3,7 +3,7 @@
 PACKAGE_VERSION="__VERSION__"
 PACKAGE_NAME="eta-touchdrv"
 CLEAN="cd touch2;make KVER=${kernelver} clean;cd ..;cd touch4;make KVER=${kernelver} clean;cd .."
-MAKE="cd touch2;make' KVER=${kernelver};cd ..;cd touch4;make' KVER=${kernelver};cd .."
+MAKE="cd touch2;make KVER=${kernelver};cd ..;cd touch4;make KVER=${kernelver};cd .."
 BUILT_MODULE_NAME[0]="optictouch"
 BUILT_MODULE_LOCATION[0]="touch2/"
 DEST_MODULE_LOCATION[0]="/extra"
