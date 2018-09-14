@@ -1,3 +1,9 @@
+eta-touchdrv (0.1.7) stable; urgency=medium
+
+  * Add libx11-6 to build-dependency
+
+ -- Yunusemre Şentürk <yunusemre.senturk@pardus.org.tr>  Fri, 14 Sep 2018 11:49:47 +0300
+
 eta-touchdrv (0.1.6) stable; urgency=medium
 
   * Pardus CI integration
